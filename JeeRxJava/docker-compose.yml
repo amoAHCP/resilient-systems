@@ -1,0 +1,13 @@
+mysqldb:
+  image: mysql:latest
+  environment:
+    MYSQL_DATABASE: sample
+    MYSQL_USER: mysql
+    MYSQL_PASSWORD: mysql
+    MYSQL_ROOT_PASSWORD: supersecret
+mywildfly:
+  image: productservice
+  links:
+    - mysqldb:db
+  ports:
+    - 8080:8080

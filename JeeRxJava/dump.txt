@@ -1,0 +1,908 @@
+=> Starting WildFly server
+=> Waiting for the server to boot
+=========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /opt/jboss/wildfly
+
+  JAVA: /usr/lib/jvm/java/bin/java
+
+  JAVA_OPTS:  -server -XX:+UseCompressedOops  -server -XX:+UseCompressedOops -Xms64m -Xmx512m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true
+
+=========================================================================
+
+[0m11:41:58,067 INFO  [org.jboss.modules] (main) JBoss Modules version 1.4.3.Final
+[0m[0m11:41:58,482 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+[0m[0m11:41:58,549 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 9.0.1.Final (WildFly Core 1.0.1.Final) starting
+[0m[0m11:42:00,370 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 9) WFLYCTL0028: Attribute 'job-repository-type' in the resource at address '/subsystem=batch' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:42:00,372 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 19) WFLYCTL0028: Attribute 'enabled' in the resource at address '/subsystem=datasources/data-source=ExampleDS' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:42:00,441 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+[0m[0m11:42:00,485 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.3.1.Final
+[0m[0m11:42:00,512 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.3.1.Final
+[0m[0m11:42:00,592 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 4.0.9.Final
+[0m[0m11:42:00,652 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 44) WFLYJSF0007: Activated the following JSF Implementations: [main]
+[0m[0m11:42:00,692 INFO  [org.jboss.as.connector] (MSC service thread 1-2) WFLYJCA0009: Starting JCA Subsystem (IronJacamar 1.2.4.Final)
+[0m[0m11:42:00,691 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) WFLYNAM0001: Activating Naming Subsystem
+[0m[0m11:42:00,686 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 33) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+[0m[0m11:42:00,664 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 37) WFLYIO001: Worker 'default' has auto-configured to 2 core threads with 16 task threads based on your 1 available processors
+[0m[0m11:42:00,662 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 38) WFLYCLINF0001: Activating Infinispan subsystem.
+[0m[0m11:42:00,772 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = h2
+[0m[0m11:42:00,851 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 53) WFLYSEC0002: Activating Security Subsystem
+[0m[33m11:42:00,850 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 54) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+[0m[0m11:42:01,071 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 56) WFLYWS0002: Activating WebServices Extension
+[0m[0m11:42:01,093 INFO  [org.jboss.as.security] (MSC service thread 1-1) WFLYSEC0001: Current PicketBox version=4.9.2.Final
+[0m[0m11:42:01,171 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0003: Undertow 1.2.9.Final starting
+[0m[0m11:42:01,403 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0003: Undertow 1.2.9.Final starting
+[0m[0m11:42:01,476 INFO  [org.jboss.as.naming] (MSC service thread 1-2) WFLYNAM0003: Starting Naming Service
+[0m[0m11:42:01,613 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+[0m[0m11:42:01,882 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path /opt/jboss/wildfly/welcome-content
+[0m[0m11:42:02,319 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0012: Started server default-server.
+[0m[0m11:42:02,645 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0018: Host default-host starting
+[0m[0m11:42:02,659 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0006: Undertow HTTP listener default listening on /0.0.0.0:8080
+[0m[0m11:42:03,378 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+[0m[0m11:42:03,418 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-2) WFLYDS0013: Started FileSystemDeploymentService for directory /opt/jboss/wildfly/standalone/deployments
+[0m[0m11:42:03,543 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBoss Web Services - Stack CXF Server 5.0.0.Final
+[0m[0m11:42:04,179 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+[0m[0m11:42:04,180 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+[0m[0m11:42:04,180 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 9.0.1.Final (WildFly Core 1.0.1.Final) started in 6818ms - Started 203 of 379 services (210 services are lazy, passive or on-demand)
+[0m=> Hello World
+=> MYSQL_HOST (explicit): 
+=> MYSQL_PORT (explicit): 
+=> MYSQL (docker host):  172.17.0.15
+=> MYSQL (docker port):  3306
+=> MYSQL (k8s host): 
+=> MYSQL (k8s port): 
+[standalone@localhost:9990 /] batch
+[standalone@localhost:9990 / #] 
+[standalone@localhost:9990 / #] set CONNECTION_URL=jdbc:mysql://:/sample
+[standalone@localhost:9990 / #] echo "Connection URL: " 
+"Connection URL: "
+[standalone@localhost:9990 / #] 
+[standalone@localhost:9990 / #] # Add MySQL module
+[standalone@localhost:9990 / #] module add --name=com.mysql --resources=/opt/jboss/wildfly/customization/mysql-connector-java-5.1.31-bin.jar --dependencies=javax.api,javax.transaction.api
+[standalone@localhost:9990 / #] 
+[standalone@localhost:9990 / #] # Add MySQL driver
+[standalone@localhost:9990 / #] /subsystem=datasources/jdbc-driver=mysql:add(driver-name=mysql,driver-module-name=com.mysql,driver-xa-datasource-class-name=com.mysql.jdbc.jdbc2.optional.MysqlXADataSource)
+[standalone@localhost:9990 / #] 
+[standalone@localhost:9990 / #] # Add the datasource
+[standalone@localhost:9990 / #] #data-source add --name=mysqlDS --driver-name=mysql --jndi-name=java:jboss/datasources/ExampleMySQLDS --connection-url=jdbc:mysql://:/sample?useUnicode=true&amp;characterEncoding=UTF-8 --user-name=mysql --password=mysql --use-ccm=false --max-pool-size=25 --blocking-timeout-wait-millis=5000 --enabled=true
+[standalone@localhost:9990 / #] #data-source add --name=mysqlDS --driver-name=mysql --jndi-name=java:jboss/datasources/ExampleMySQLDS --connection-url=jdbc:mysql://:/sample?useUnicode=true&amp;characterEncoding=UTF-8 --user-name=mysql --password=mysql --use-ccm=false --max-pool-size=25 --blocking-timeout-wait-millis=5000 --enabled=true
+[standalone@localhost:9990 / #] #data-source add --name=mysqlDS --driver-name=mysql --jndi-name=java:jboss/datasources/ExampleMySQLDS --connection-url=jdbc:mysql://172.17.0.15:3306/sample?useUnicode=true&amp;characterEncoding=UTF-8 --user-name=mysql --password=mysql --use-ccm=false --max-pool-size=25 --blocking-timeout-wait-millis=5000 --enabled=true
+[standalone@localhost:9990 / #] data-source add --name=mysqlDS --driver-name=mysql --jndi-name=java:jboss/datasources/ExampleMySQLDS --connection-url=jdbc:mysql://:/sample --user-name=mysql --password=mysql --use-ccm=false --max-pool-size=25 --blocking-timeout-wait-millis=5000 --enabled=true
+[standalone@localhost:9990 / #] 
+[standalone@localhost:9990 / #] # Execute the batch
+[standalone@localhost:9990 / #] run-batch
+[0m11:42:08,218 INFO  [org.jboss.as.controller.management-deprecated] (management-handler-thread - 2) WFLYCTL0028: Attribute 'enabled' in the resource at address '/subsystem=datasources/data-source=mysqlDS' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:42:08,247 INFO  [org.jboss.as.connector.subsystems.datasources] (management-handler-thread - 2) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+[0m[0m11:42:08,248 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = mysql
+[0m[0m11:42:08,264 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleMySQLDS]
+[0mThe batch executed successfully
+[standalone@localhost:9990 /] 
+=> Shutting down WildFly
+[0m11:42:08,469 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 2) WFLYDR0001: Content added at location /opt/jboss/wildfly/standalone/data/content/12/dc1d80b261e5ad970bb67063f121bd62388b31/content
+[0m[0m11:42:08,506 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "ProductService.war" (runtime-name: "ProductService.war")
+[0m[0m11:42:09,362 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) WFLYJPA0002: Read persistence.xml for ProductService-persistence-unit
+[0m[0m11:42:09,497 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 11) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'ProductService.war#ProductService-persistence-unit'
+[0m[0m11:42:09,505 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 11) HHH000204: Processing PersistenceUnitInfo [
+	name: ProductService-persistence-unit
+	...]
+[0m[0m11:42:09,658 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment ProductService.war
+[0m[0m11:42:09,717 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 11) HHH000412: Hibernate Core {4.3.10.Final}
+[0m[0m11:42:09,724 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 11) HHH000206: hibernate.properties not found
+[0m[0m11:42:09,733 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 11) HHH000021: Bytecode provider name : javassist
+[0m[0m11:42:09,876 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-1) HV000001: Hibernate Validator 5.1.3.Final
+[0m[0m11:42:10,330 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-1) JNDI bindings for session bean named ProductEndpoint in deployment unit deployment "ProductService.war" are as follows:
+
+	java:global/ProductService/ProductEndpoint!ch.trivadis.rest.ProductEndpoint
+	java:app/ProductService/ProductEndpoint!ch.trivadis.rest.ProductEndpoint
+	java:module/ProductEndpoint!ch.trivadis.rest.ProductEndpoint
+	java:global/ProductService/ProductEndpoint
+	java:app/ProductService/ProductEndpoint
+	java:module/ProductEndpoint
+
+[0m[0m11:42:10,922 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0006: Starting Services for CDI deployment: ProductService.war
+[0m[0m11:42:11,005 INFO  [org.jboss.weld.Version] (MSC service thread 1-2) WELD-000900: 2.2.14 (Final)
+[0m[0m11:42:11,152 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0009: Starting weld service for deployment ProductService.war
+[0m[0m11:42:11,625 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 11) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'ProductService.war#ProductService-persistence-unit'
+[0m[0m11:42:11,779 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 11) HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[0m[33m11:42:11,875 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 11) IJ000604: Throwable while attempting to get a new connection: null: javax.resource.ResourceException: IJ031084: Unable to create connection
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createLocalManagedConnection(LocalManagedConnectionFactory.java:336)
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.getLocalManagedConnection(LocalManagedConnectionFactory.java:343)
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createManagedConnection(LocalManagedConnectionFactory.java:278)
+	at org.jboss.jca.core.connectionmanager.pool.mcp.SemaphoreArrayListManagedConnectionPool.createConnectionEventListener(SemaphoreArrayListManagedConnectionPool.java:1224)
+	at org.jboss.jca.core.connectionmanager.pool.mcp.SemaphoreArrayListManagedConnectionPool.getConnection(SemaphoreArrayListManagedConnectionPool.java:484)
+	at org.jboss.jca.core.connectionmanager.pool.AbstractPool.getSimpleConnection(AbstractPool.java:622)
+	at org.jboss.jca.core.connectionmanager.pool.AbstractPool.getConnection(AbstractPool.java:594)
+	at org.jboss.jca.core.connectionmanager.AbstractConnectionManager.getManagedConnection(AbstractConnectionManager.java:579)
+	at org.jboss.jca.core.connectionmanager.tx.TxConnectionManagerImpl.getManagedConnection(TxConnectionManagerImpl.java:430)
+	at org.jboss.jca.core.connectionmanager.AbstractConnectionManager.allocateConnection(AbstractConnectionManager.java:737)
+	at org.jboss.jca.adapters.jdbc.WrapperDataSource.getConnection(WrapperDataSource.java:138)
+	at org.jboss.as.connector.subsystems.datasources.WildFlyDataSource.getConnection(WildFlyDataSource.java:67)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcServicesImpl.java:279)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:124)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:111)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:234)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1887)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1845)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849)
+	at org.jboss.as.jpa.hibernate4.TwoPhaseBootstrapImpl.build(TwoPhaseBootstrapImpl.java:44)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:154)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:117)
+	at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:665)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1.run(PersistenceUnitServiceImpl.java:182)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:320)
+Caused by: java.sql.SQLException: Must specify port after ':' in connection string
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1094)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:997)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:983)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:928)
+	at com.mysql.jdbc.NonRegisteringDriver.parseHostPortPair(NonRegisteringDriver.java:229)
+	at com.mysql.jdbc.NonRegisteringDriver.parseURL(NonRegisteringDriver.java:754)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:335)
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createLocalManagedConnection(LocalManagedConnectionFactory.java:312)
+	... 32 more
+
+[0m[33m11:42:11,891 WARN  [org.hibernate.engine.jdbc.internal.JdbcServicesImpl] (ServerService Thread Pool -- 11) HHH000342: Could not obtain connection to query metadata : javax.resource.ResourceException: IJ000453: Unable to get managed connection for java:jboss/datasources/ExampleMySQLDS
+[0m[31m11:42:11,892 ERROR [org.jboss.msc.service.fail] (ServerService Thread Pool -- 11) MSC000001: Failed to start service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.jboss.msc.service.StartException in service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:172)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:117)
+	at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:665)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1.run(PersistenceUnitServiceImpl.java:182)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:320)
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:104)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:71)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:205)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:111)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:234)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1887)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1845)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849)
+	at org.jboss.as.jpa.hibernate4.TwoPhaseBootstrapImpl.build(TwoPhaseBootstrapImpl.java:44)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:154)
+	... 7 more
+
+[0m[31m11:42:11,896 ERROR [org.jboss.as.controller.management-operation] (DeploymentScanner-threads - 2) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "ProductService.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.persistenceunit.\"ProductService.war#ProductService-persistence-unit\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"ProductService.war#ProductService-persistence-unit\": org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+    Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set"}}
+[0m[0m11:42:11,929 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0010: Deployed "ProductService.war" (runtime-name : "ProductService.war")
+[0m[0m11:42:11,930 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.jboss.msc.service.StartException in service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+
+[0m[0m11:42:11,933 INFO  [org.jboss.as.server] (management-handler-thread - 2) WFLYSRV0211: Suspending server
+[0m{"outcome" => "success"}
+=> Restarting WildFly
+[0m11:42:11,979 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested.
+[0m[0m11:42:11,996 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 11) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'ProductService.war#ProductService-persistence-unit'
+[0m[0m11:42:12,014 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0019: Host default-host stopping
+[0m[0m11:42:12,015 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleMySQLDS]
+[0m[0m11:42:12,017 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+[0m[0m11:42:12,024 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0010: Stopping weld service for deployment ProductService.war
+[0m[0m11:42:12,028 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = mysql
+[0m[0m11:42:12,028 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = h2
+[0m[0m11:42:12,078 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0008: Undertow HTTP listener default suspending
+[0m[0m11:42:12,080 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0007: Undertow HTTP listener default stopped, was bound to /0.0.0.0:8080
+[0m[0m11:42:12,081 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0004: Undertow 1.2.9.Final stopping
+[0m[0m11:42:12,084 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment ProductService.war (runtime-name: ProductService.war) in 96ms
+[0m[0m11:42:12,119 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0050: WildFly Full 9.0.1.Final (WildFly Core 1.0.1.Final) stopped in 132ms
+[0m=========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /opt/jboss/wildfly
+
+  JAVA: /usr/lib/jvm/java/bin/java
+
+  JAVA_OPTS:  -server -XX:+UseCompressedOops  -server -XX:+UseCompressedOops -Xms64m -Xmx512m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true
+
+=========================================================================
+
+[0m11:42:12,567 INFO  [org.jboss.modules] (main) JBoss Modules version 1.4.3.Final
+[0m[0m11:42:12,857 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+[0m[0m11:42:12,926 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 9.0.1.Final (WildFly Core 1.0.1.Final) starting
+[0m[0m11:42:14,315 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 19) WFLYCTL0028: Attribute 'job-repository-type' in the resource at address '/subsystem=batch' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:42:14,317 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 7) WFLYCTL0028: Attribute 'enabled' in the resource at address '/subsystem=datasources/data-source=ExampleDS' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:42:14,318 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 7) WFLYCTL0028: Attribute 'enabled' in the resource at address '/subsystem=datasources/data-source=mysqlDS' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:42:14,342 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) WFLYDS0015: Re-attempting failed deployment ProductService.war
+[0m[0m11:42:14,416 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+[0m[0m11:42:14,442 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.3.1.Final
+[0m[0m11:42:14,466 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.3.1.Final
+[0m[0m11:42:14,530 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 38) WFLYCLINF0001: Activating Infinispan subsystem.
+[0m[0m11:42:14,541 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 37) WFLYIO001: Worker 'default' has auto-configured to 2 core threads with 16 task threads based on your 1 available processors
+[0m[0m11:42:14,585 INFO  [org.jboss.as.connector] (MSC service thread 1-2) WFLYJCA0009: Starting JCA Subsystem (IronJacamar 1.2.4.Final)
+[0m[0m11:42:14,631 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 56) WFLYWS0002: Activating WebServices Extension
+[0m[0m11:42:14,632 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 53) WFLYSEC0002: Activating Security Subsystem
+[0m[0m11:42:14,681 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 44) WFLYJSF0007: Activated the following JSF Implementations: [main]
+[0m[0m11:42:14,664 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 4.0.9.Final
+[0m[33m11:42:14,663 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 54) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+[0m[0m11:42:14,651 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) WFLYNAM0001: Activating Naming Subsystem
+[0m[0m11:42:14,703 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0003: Undertow 1.2.9.Final starting
+[0m[0m11:42:14,686 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 33) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+[0m[0m11:42:14,797 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 33) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+[0m[0m11:42:14,973 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path /opt/jboss/wildfly/welcome-content
+[0m[0m11:42:14,996 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0003: Undertow 1.2.9.Final starting
+[0m[0m11:42:14,975 INFO  [org.jboss.as.security] (MSC service thread 1-2) WFLYSEC0001: Current PicketBox version=4.9.2.Final
+[0m[0m11:42:15,094 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = h2
+[0m[0m11:42:15,095 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = mysql
+[0m[0m11:42:15,261 INFO  [org.jboss.as.naming] (MSC service thread 1-2) WFLYNAM0003: Starting Naming Service
+[0m[0m11:42:15,270 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-1) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+[0m[0m11:42:15,291 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0012: Started server default-server.
+[0m[0m11:42:15,474 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0006: Undertow HTTP listener default listening on /0.0.0.0:8080
+[0m[0m11:42:15,477 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0018: Host default-host starting
+[0m[0m11:42:15,715 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) WFLYDS0013: Started FileSystemDeploymentService for directory /opt/jboss/wildfly/standalone/deployments
+[0m[0m11:42:15,744 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "ProductService.war" (runtime-name: "ProductService.war")
+[0m[0m11:42:15,747 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleMySQLDS]
+[0m[0m11:42:15,803 INFO  [org.jboss.ws.common.management] (MSC service thread 1-2) JBWS022052: Starting JBoss Web Services - Stack CXF Server 5.0.0.Final
+[0m[0m11:42:15,812 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+[0m[0m11:42:16,304 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) WFLYJPA0002: Read persistence.xml for ProductService-persistence-unit
+[0m[0m11:42:16,388 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 58) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'ProductService.war#ProductService-persistence-unit'
+[0m[0m11:42:16,399 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 58) HHH000204: Processing PersistenceUnitInfo [
+	name: ProductService-persistence-unit
+	...]
+[0m[0m11:42:16,482 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment ProductService.war
+[0m[0m11:42:16,547 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 58) HHH000412: Hibernate Core {4.3.10.Final}
+[0m[0m11:42:16,564 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 58) HHH000206: hibernate.properties not found
+[0m[0m11:42:16,565 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 58) HHH000021: Bytecode provider name : javassist
+[0m[0m11:42:16,611 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-1) HV000001: Hibernate Validator 5.1.3.Final
+[0m[0m11:42:16,773 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-1) JNDI bindings for session bean named ProductEndpoint in deployment unit deployment "ProductService.war" are as follows:
+
+	java:global/ProductService/ProductEndpoint!ch.trivadis.rest.ProductEndpoint
+	java:app/ProductService/ProductEndpoint!ch.trivadis.rest.ProductEndpoint
+	java:module/ProductEndpoint!ch.trivadis.rest.ProductEndpoint
+	java:global/ProductService/ProductEndpoint
+	java:app/ProductService/ProductEndpoint
+	java:module/ProductEndpoint
+
+[0m[0m11:42:17,079 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0006: Starting Services for CDI deployment: ProductService.war
+[0m[0m11:42:17,130 INFO  [org.jboss.weld.Version] (MSC service thread 1-2) WELD-000900: 2.2.14 (Final)
+[0m[0m11:42:17,343 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0009: Starting weld service for deployment ProductService.war
+[0m[0m11:42:17,575 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 58) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'ProductService.war#ProductService-persistence-unit'
+[0m[0m11:42:17,684 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 58) HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[0m[33m11:42:17,768 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 58) IJ000604: Throwable while attempting to get a new connection: null: javax.resource.ResourceException: IJ031084: Unable to create connection
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createLocalManagedConnection(LocalManagedConnectionFactory.java:336)
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.getLocalManagedConnection(LocalManagedConnectionFactory.java:343)
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createManagedConnection(LocalManagedConnectionFactory.java:278)
+	at org.jboss.jca.core.connectionmanager.pool.mcp.SemaphoreArrayListManagedConnectionPool.createConnectionEventListener(SemaphoreArrayListManagedConnectionPool.java:1224)
+	at org.jboss.jca.core.connectionmanager.pool.mcp.SemaphoreArrayListManagedConnectionPool.getConnection(SemaphoreArrayListManagedConnectionPool.java:484)
+	at org.jboss.jca.core.connectionmanager.pool.AbstractPool.getSimpleConnection(AbstractPool.java:622)
+	at org.jboss.jca.core.connectionmanager.pool.AbstractPool.getConnection(AbstractPool.java:594)
+	at org.jboss.jca.core.connectionmanager.AbstractConnectionManager.getManagedConnection(AbstractConnectionManager.java:579)
+	at org.jboss.jca.core.connectionmanager.tx.TxConnectionManagerImpl.getManagedConnection(TxConnectionManagerImpl.java:430)
+	at org.jboss.jca.core.connectionmanager.AbstractConnectionManager.allocateConnection(AbstractConnectionManager.java:737)
+	at org.jboss.jca.adapters.jdbc.WrapperDataSource.getConnection(WrapperDataSource.java:138)
+	at org.jboss.as.connector.subsystems.datasources.WildFlyDataSource.getConnection(WildFlyDataSource.java:67)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcServicesImpl.java:279)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:124)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:111)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:234)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1887)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1845)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849)
+	at org.jboss.as.jpa.hibernate4.TwoPhaseBootstrapImpl.build(TwoPhaseBootstrapImpl.java:44)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:154)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:117)
+	at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:665)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1.run(PersistenceUnitServiceImpl.java:182)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:320)
+Caused by: java.sql.SQLException: Must specify port after ':' in connection string
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1094)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:997)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:983)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:928)
+	at com.mysql.jdbc.NonRegisteringDriver.parseHostPortPair(NonRegisteringDriver.java:229)
+	at com.mysql.jdbc.NonRegisteringDriver.parseURL(NonRegisteringDriver.java:754)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:335)
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createLocalManagedConnection(LocalManagedConnectionFactory.java:312)
+	... 32 more
+
+[0m[33m11:42:17,781 WARN  [org.hibernate.engine.jdbc.internal.JdbcServicesImpl] (ServerService Thread Pool -- 58) HHH000342: Could not obtain connection to query metadata : javax.resource.ResourceException: IJ000453: Unable to get managed connection for java:jboss/datasources/ExampleMySQLDS
+[0m[31m11:42:17,786 ERROR [org.jboss.msc.service.fail] (ServerService Thread Pool -- 58) MSC000001: Failed to start service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.jboss.msc.service.StartException in service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:172)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:117)
+	at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:665)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1.run(PersistenceUnitServiceImpl.java:182)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:320)
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:104)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:71)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:205)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:111)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:234)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1887)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1845)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849)
+	at org.jboss.as.jpa.hibernate4.TwoPhaseBootstrapImpl.build(TwoPhaseBootstrapImpl.java:44)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:154)
+	... 7 more
+
+[0m[31m11:42:17,790 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "ProductService.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.persistenceunit.\"ProductService.war#ProductService-persistence-unit\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"ProductService.war#ProductService-persistence-unit\": org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+    Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set"}}
+[0m[0m11:42:17,854 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 34) WFLYSRV0010: Deployed "ProductService.war" (runtime-name : "ProductService.war")
+[0m[0m11:42:17,856 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.jboss.msc.service.StartException in service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+
+[0m[0m11:42:18,044 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+[0m[0m11:42:18,045 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+[0m[31m11:42:18,045 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: WildFly Full 9.0.1.Final (WildFly Core 1.0.1.Final) started (with errors) in 5805ms - Started 305 of 502 services (24 services failed or missing dependencies, 221 services are lazy, passive or on-demand)
+[0m[0m11:42:18,093 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 6) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'ProductService.war#ProductService-persistence-unit'
+[0m[0m11:42:18,095 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0010: Stopping weld service for deployment ProductService.war
+[0m[0m11:42:18,143 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment ProductService.war (runtime-name: ProductService.war) in 55ms
+[0m[0m11:42:18,204 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 2) WFLYDR0002: Content removed from location /opt/jboss/wildfly/standalone/data/content/12/dc1d80b261e5ad970bb67063f121bd62388b31/content
+[0m[0m11:42:18,205 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0009: Undeployed "ProductService.war" (runtime-name: "ProductService.war")
+[0m[0m11:42:18,207 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) WFLYCTL0183: Service status report
+WFLYCTL0184:    New missing/unsatisfied dependencies:
+      service jboss.deployment.unit."ProductService.war".WeldBootstrapService (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".WeldInstantiator, WFLYCTL0208: ... and 7 more ] 
+      service jboss.deployment.unit."ProductService.war".WeldStartService (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".WeldInstantiator, WFLYCTL0208: ... and 8 more ] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START (missing) dependents: [service jboss.deployment.unit."ProductService.war".moduleDeploymentRuntimeInformationStart, service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.VIEW."ch.trivadis.rest.ProductEndpoint".LOCAL (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInterceptorBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInstantiator] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.ejb.non-functional-timerservice (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".START] 
+      service jboss.deployment.unit."ProductService.war".ee.ComponentRegistry (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService] 
+      service jboss.deployment.unit."ProductService.war".jndiDependencyService (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".START, service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START, service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START, service jboss.deployment.unit."ProductService.war".WeldStartService, WFLYCTL0208: ... and 5 more ] 
+      service jboss.deployment.unit."ProductService.war".moduleDeploymentRuntimeInformation (missing) dependents: [service jboss.deployment.unit."ProductService.war".moduleDeploymentRuntimeInformationStart, service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.naming.context.java.app.ProductService.env (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.BeanManager (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultContextService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultDataSource (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultManagedExecutorService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultManagedScheduledExecutorService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultManagedThreadFactory (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.EJBContext (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.TimerService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.TransactionSynchronizationRegistry (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.UserTransaction (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.env (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.env."ch.trivadis.rest.ProductEndpoint".em (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START, service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit" (missing) dependents: [service jboss.naming.context.java.module.ProductService.ProductService.env."ch.trivadis.rest.ProductEndpoint".em, service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START, service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START, service jboss.deployment.unit."ProductService.war".WeldStartService, WFLYCTL0208: ... and 7 more ] 
+      service jboss.server.global-request-controller.control-point."ProductService.war".undertow (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService] 
+      service jboss.undertow.deployment.default-server.default-host./ProductService (missing) dependents: [service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService] 
+      service jboss.undertow.deployment.default-server.default-host./ProductService.codec (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService] 
+      service jboss.undertow.deployment.default-server.default-host./ProductService.session (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService] 
+WFLYCTL0186:   Services which failed to start:      service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit"
+
+[0m
+=> Starting WildFly server
+=> Waiting for the server to boot
+=========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /opt/jboss/wildfly
+
+  JAVA: /usr/lib/jvm/java/bin/java
+
+  JAVA_OPTS:  -server -XX:+UseCompressedOops  -server -XX:+UseCompressedOops -Xms64m -Xmx512m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true
+
+=========================================================================
+
+[0m11:42:44,323 INFO  [org.jboss.modules] (main) JBoss Modules version 1.4.3.Final
+[0m[0m11:42:44,728 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+[0m[0m11:42:44,803 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 9.0.1.Final (WildFly Core 1.0.1.Final) starting
+[0m[0m11:42:46,390 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 4) WFLYCTL0028: Attribute 'job-repository-type' in the resource at address '/subsystem=batch' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:42:46,392 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 3) WFLYCTL0028: Attribute 'enabled' in the resource at address '/subsystem=datasources/data-source=ExampleDS' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:42:46,393 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 3) WFLYCTL0028: Attribute 'enabled' in the resource at address '/subsystem=datasources/data-source=mysqlDS' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:42:46,450 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) WFLYDS0015: Re-attempting failed deployment ProductService.war
+[0m[0m11:42:46,532 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 13) WFLYDR0001: Content added at location /opt/jboss/wildfly/standalone/data/content/12/dc1d80b261e5ad970bb67063f121bd62388b31/content
+[0m[0m11:42:46,566 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+[0m[0m11:42:46,615 INFO  [org.xnio] (MSC service thread 1-2) XNIO version 3.3.1.Final
+[0m[0m11:42:46,672 INFO  [org.xnio.nio] (MSC service thread 1-2) XNIO NIO Implementation Version 3.3.1.Final
+[0m[0m11:42:46,761 INFO  [org.jboss.remoting] (MSC service thread 1-2) JBoss Remoting version 4.0.9.Final
+[0m[0m11:42:46,783 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 37) WFLYIO001: Worker 'default' has auto-configured to 2 core threads with 16 task threads based on your 1 available processors
+[0m[0m11:42:46,798 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 38) WFLYCLINF0001: Activating Infinispan subsystem.
+[0m[0m11:42:46,925 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 56) WFLYWS0002: Activating WebServices Extension
+[0m[0m11:42:46,972 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) WFLYNAM0001: Activating Naming Subsystem
+[0m[0m11:42:46,952 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 33) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+[0m[0m11:42:46,947 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 44) WFLYJSF0007: Activated the following JSF Implementations: [main]
+[0m[0m11:42:46,927 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 53) WFLYSEC0002: Activating Security Subsystem
+[0m[33m11:42:46,926 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 54) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+[0m[0m11:42:46,994 INFO  [org.jboss.as.connector] (MSC service thread 1-1) WFLYJCA0009: Starting JCA Subsystem (IronJacamar 1.2.4.Final)
+[0m[0m11:42:47,029 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0003: Undertow 1.2.9.Final starting
+[0m[0m11:42:47,030 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0003: Undertow 1.2.9.Final starting
+[0m[0m11:42:47,042 INFO  [org.jboss.as.security] (MSC service thread 1-1) WFLYSEC0001: Current PicketBox version=4.9.2.Final
+[0m[0m11:42:47,143 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 33) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+[0m[0m11:42:47,498 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = h2
+[0m[0m11:42:47,569 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = mysql
+[0m[0m11:42:47,570 INFO  [org.jboss.as.naming] (MSC service thread 1-2) WFLYNAM0003: Starting Naming Service
+[0m[0m11:42:47,571 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+[0m[0m11:42:47,589 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path /opt/jboss/wildfly/welcome-content
+[0m[0m11:42:48,026 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0012: Started server default-server.
+[0m[0m11:42:48,180 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0006: Undertow HTTP listener default listening on /0.0.0.0:8080
+[0m[0m11:42:48,191 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0018: Host default-host starting
+[0m[0m11:42:48,531 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleMySQLDS]
+[0m[0m11:42:48,535 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) WFLYDS0013: Started FileSystemDeploymentService for directory /opt/jboss/wildfly/standalone/deployments
+[0m[0m11:42:48,545 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+[0m[0m11:42:48,591 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "ProductService.war" (runtime-name: "ProductService.war")
+[0m[0m11:42:48,704 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBoss Web Services - Stack CXF Server 5.0.0.Final
+[0m[0m11:42:49,189 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) WFLYJPA0002: Read persistence.xml for ProductService-persistence-unit
+[0m[0m11:42:49,280 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 58) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'ProductService.war#ProductService-persistence-unit'
+[0m[0m11:42:49,295 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 58) HHH000204: Processing PersistenceUnitInfo [
+	name: ProductService-persistence-unit
+	...]
+[0m[0m11:42:49,372 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment ProductService.war
+[0m[0m11:42:49,421 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 58) HHH000412: Hibernate Core {4.3.10.Final}
+[0m[0m11:42:49,433 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 58) HHH000206: hibernate.properties not found
+[0m[0m11:42:49,439 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 58) HHH000021: Bytecode provider name : javassist
+[0m[0m11:42:49,497 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-1) HV000001: Hibernate Validator 5.1.3.Final
+[0m[0m11:42:49,649 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-1) JNDI bindings for session bean named ProductEndpoint in deployment unit deployment "ProductService.war" are as follows:
+
+	java:global/ProductService/ProductEndpoint!ch.trivadis.rest.ProductEndpoint
+	java:app/ProductService/ProductEndpoint!ch.trivadis.rest.ProductEndpoint
+	java:module/ProductEndpoint!ch.trivadis.rest.ProductEndpoint
+	java:global/ProductService/ProductEndpoint
+	java:app/ProductService/ProductEndpoint
+	java:module/ProductEndpoint
+
+[0m[0m11:42:50,128 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0006: Starting Services for CDI deployment: ProductService.war
+[0m[0m11:42:50,214 INFO  [org.jboss.weld.Version] (MSC service thread 1-2) WELD-000900: 2.2.14 (Final)
+[0m[0m11:42:50,622 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0009: Starting weld service for deployment ProductService.war
+[0m[0m11:42:51,026 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 58) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'ProductService.war#ProductService-persistence-unit'
+[0m[0m11:42:51,213 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 58) HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[0m[33m11:42:51,361 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 58) IJ000604: Throwable while attempting to get a new connection: null: javax.resource.ResourceException: IJ031084: Unable to create connection
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createLocalManagedConnection(LocalManagedConnectionFactory.java:336)
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.getLocalManagedConnection(LocalManagedConnectionFactory.java:343)
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createManagedConnection(LocalManagedConnectionFactory.java:278)
+	at org.jboss.jca.core.connectionmanager.pool.mcp.SemaphoreArrayListManagedConnectionPool.createConnectionEventListener(SemaphoreArrayListManagedConnectionPool.java:1224)
+	at org.jboss.jca.core.connectionmanager.pool.mcp.SemaphoreArrayListManagedConnectionPool.getConnection(SemaphoreArrayListManagedConnectionPool.java:484)
+	at org.jboss.jca.core.connectionmanager.pool.AbstractPool.getSimpleConnection(AbstractPool.java:622)
+	at org.jboss.jca.core.connectionmanager.pool.AbstractPool.getConnection(AbstractPool.java:594)
+	at org.jboss.jca.core.connectionmanager.AbstractConnectionManager.getManagedConnection(AbstractConnectionManager.java:579)
+	at org.jboss.jca.core.connectionmanager.tx.TxConnectionManagerImpl.getManagedConnection(TxConnectionManagerImpl.java:430)
+	at org.jboss.jca.core.connectionmanager.AbstractConnectionManager.allocateConnection(AbstractConnectionManager.java:737)
+	at org.jboss.jca.adapters.jdbc.WrapperDataSource.getConnection(WrapperDataSource.java:138)
+	at org.jboss.as.connector.subsystems.datasources.WildFlyDataSource.getConnection(WildFlyDataSource.java:67)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcServicesImpl.java:279)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:124)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:111)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:234)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1887)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1845)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849)
+	at org.jboss.as.jpa.hibernate4.TwoPhaseBootstrapImpl.build(TwoPhaseBootstrapImpl.java:44)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:154)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:117)
+	at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:665)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1.run(PersistenceUnitServiceImpl.java:182)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:320)
+Caused by: java.sql.SQLException: Must specify port after ':' in connection string
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1094)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:997)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:983)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:928)
+	at com.mysql.jdbc.NonRegisteringDriver.parseHostPortPair(NonRegisteringDriver.java:229)
+	at com.mysql.jdbc.NonRegisteringDriver.parseURL(NonRegisteringDriver.java:754)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:335)
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createLocalManagedConnection(LocalManagedConnectionFactory.java:312)
+	... 32 more
+
+[0m[33m11:42:51,369 WARN  [org.hibernate.engine.jdbc.internal.JdbcServicesImpl] (ServerService Thread Pool -- 58) HHH000342: Could not obtain connection to query metadata : javax.resource.ResourceException: IJ000453: Unable to get managed connection for java:jboss/datasources/ExampleMySQLDS
+[0m[31m11:42:51,374 ERROR [org.jboss.msc.service.fail] (ServerService Thread Pool -- 58) MSC000001: Failed to start service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.jboss.msc.service.StartException in service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:172)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:117)
+	at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:665)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1.run(PersistenceUnitServiceImpl.java:182)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:320)
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:104)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:71)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:205)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:111)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:234)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1887)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1845)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849)
+	at org.jboss.as.jpa.hibernate4.TwoPhaseBootstrapImpl.build(TwoPhaseBootstrapImpl.java:44)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:154)
+	... 7 more
+
+[0m[31m11:42:51,385 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "ProductService.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.persistenceunit.\"ProductService.war#ProductService-persistence-unit\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"ProductService.war#ProductService-persistence-unit\": org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+    Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set"}}
+[0m[0m11:42:51,481 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 34) WFLYSRV0010: Deployed "ProductService.war" (runtime-name : "ProductService.war")
+[0m[0m11:42:51,482 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.jboss.msc.service.StartException in service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+
+[0m[0m11:42:51,706 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+[0m[0m11:42:51,706 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+[0m[31m11:42:51,707 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: WildFly Full 9.0.1.Final (WildFly Core 1.0.1.Final) started (with errors) in 8091ms - Started 305 of 502 services (24 services failed or missing dependencies, 221 services are lazy, passive or on-demand)
+[0m[0m11:42:51,758 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 2) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'ProductService.war#ProductService-persistence-unit'
+[0m[0m11:42:51,759 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0010: Stopping weld service for deployment ProductService.war
+[0m[0m11:42:51,832 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment ProductService.war (runtime-name: ProductService.war) in 79ms
+[0m[0m11:42:51,951 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 2) WFLYDR0002: Content removed from location /opt/jboss/wildfly/standalone/data/content/12/dc1d80b261e5ad970bb67063f121bd62388b31/content
+[0m[0m11:42:51,952 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0009: Undeployed "ProductService.war" (runtime-name: "ProductService.war")
+[0m[0m11:42:51,955 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) WFLYCTL0183: Service status report
+WFLYCTL0184:    New missing/unsatisfied dependencies:
+      service jboss.deployment.unit."ProductService.war".WeldBootstrapService (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".WeldInstantiator, WFLYCTL0208: ... and 7 more ] 
+      service jboss.deployment.unit."ProductService.war".WeldStartService (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".WeldInstantiator, WFLYCTL0208: ... and 8 more ] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START (missing) dependents: [service jboss.deployment.unit."ProductService.war".moduleDeploymentRuntimeInformationStart, service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.VIEW."ch.trivadis.rest.ProductEndpoint".LOCAL (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInterceptorBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInstantiator] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.ejb.non-functional-timerservice (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".START] 
+      service jboss.deployment.unit."ProductService.war".ee.ComponentRegistry (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService] 
+      service jboss.deployment.unit."ProductService.war".jndiDependencyService (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".START, service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START, service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START, service jboss.deployment.unit."ProductService.war".WeldStartService, WFLYCTL0208: ... and 5 more ] 
+      service jboss.deployment.unit."ProductService.war".moduleDeploymentRuntimeInformation (missing) dependents: [service jboss.deployment.unit."ProductService.war".moduleDeploymentRuntimeInformationStart, service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.naming.context.java.app.ProductService.env (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.BeanManager (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultContextService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultDataSource (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultManagedExecutorService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultManagedScheduledExecutorService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultManagedThreadFactory (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.EJBContext (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.TimerService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.TransactionSynchronizationRegistry (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.UserTransaction (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.env (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.env."ch.trivadis.rest.ProductEndpoint".em (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START, service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit" (missing) dependents: [service jboss.naming.context.java.module.ProductService.ProductService.env."ch.trivadis.rest.ProductEndpoint".em, service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START, service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START, service jboss.deployment.unit."ProductService.war".WeldStartService, WFLYCTL0208: ... and 7 more ] 
+      service jboss.server.global-request-controller.control-point."ProductService.war".undertow (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService] 
+      service jboss.undertow.deployment.default-server.default-host./ProductService (missing) dependents: [service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService] 
+      service jboss.undertow.deployment.default-server.default-host./ProductService.codec (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService] 
+      service jboss.undertow.deployment.default-server.default-host./ProductService.session (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService] 
+WFLYCTL0186:   Services which failed to start:      service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit"
+
+[0m=> Hello World
+=> MYSQL_HOST (explicit): 
+=> MYSQL_PORT (explicit): 
+=> MYSQL (docker host):  172.17.0.17
+=> MYSQL (docker port):  3306
+=> MYSQL (k8s host): 
+=> MYSQL (k8s port): 
+[standalone@localhost:9990 /] batch
+[standalone@localhost:9990 / #] 
+[standalone@localhost:9990 / #] set CONNECTION_URL=jdbc:mysql://:/sample
+[standalone@localhost:9990 / #] echo "Connection URL: " 
+"Connection URL: "
+[standalone@localhost:9990 / #] 
+[standalone@localhost:9990 / #] # Add MySQL module
+[standalone@localhost:9990 / #] module add --name=com.mysql --resources=/opt/jboss/wildfly/customization/mysql-connector-java-5.1.31-bin.jar --dependencies=javax.api,javax.transaction.api
+Module com.mysql already exists at /opt/jboss/wildfly/modules/com/mysql/main
+[standalone@localhost:9990 / #] 
+[standalone@localhost:9990 / #] # Add MySQL driver
+[standalone@localhost:9990 / #] /subsystem=datasources/jdbc-driver=mysql:add(driver-name=mysql,driver-module-name=com.mysql,driver-xa-datasource-class-name=com.mysql.jdbc.jdbc2.optional.MysqlXADataSource)
+[standalone@localhost:9990 / #] 
+[standalone@localhost:9990 / #] # Add the datasource
+[standalone@localhost:9990 / #] #data-source add --name=mysqlDS --driver-name=mysql --jndi-name=java:jboss/datasources/ExampleMySQLDS --connection-url=jdbc:mysql://:/sample?useUnicode=true&amp;characterEncoding=UTF-8 --user-name=mysql --password=mysql --use-ccm=false --max-pool-size=25 --blocking-timeout-wait-millis=5000 --enabled=true
+[standalone@localhost:9990 / #] #data-source add --name=mysqlDS --driver-name=mysql --jndi-name=java:jboss/datasources/ExampleMySQLDS --connection-url=jdbc:mysql://:/sample?useUnicode=true&amp;characterEncoding=UTF-8 --user-name=mysql --password=mysql --use-ccm=false --max-pool-size=25 --blocking-timeout-wait-millis=5000 --enabled=true
+[standalone@localhost:9990 / #] #data-source add --name=mysqlDS --driver-name=mysql --jndi-name=java:jboss/datasources/ExampleMySQLDS --connection-url=jdbc:mysql://172.17.0.17:3306/sample?useUnicode=true&amp;characterEncoding=UTF-8 --user-name=mysql --password=mysql --use-ccm=false --max-pool-size=25 --blocking-timeout-wait-millis=5000 --enabled=true
+[standalone@localhost:9990 / #] data-source add --name=mysqlDS --driver-name=mysql --jndi-name=java:jboss/datasources/ExampleMySQLDS --connection-url=jdbc:mysql://:/sample --user-name=mysql --password=mysql --use-ccm=false --max-pool-size=25 --blocking-timeout-wait-millis=5000 --enabled=true
+[standalone@localhost:9990 / #] 
+[standalone@localhost:9990 / #] # Execute the batch
+[standalone@localhost:9990 / #] run-batch
+The batch failed with the following error (you are remaining in the batch editing mode to have a chance to correct the error): {"WFLYCTL0062: Composite operation failed and was rolled back. Steps that failed:" => {"Operation step-1" => "WFLYCTL0212: Duplicate resource [
+    (\"subsystem\" => \"datasources\"),
+    (\"jdbc-driver\" => \"mysql\")
+]"}}
+[standalone@localhost:9990 / #] 
+=> Shutting down WildFly
+[0m11:42:56,289 INFO  [org.jboss.as.server] (management-handler-thread - 2) WFLYSRV0211: Suspending server
+[0m{"outcome" => "success"}
+[0m11:42:56,307 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested.
+[0m[0m11:42:56,316 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+[0m[0m11:42:56,317 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleMySQLDS]
+[0m[0m11:42:56,354 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0019: Host default-host stopping
+[0m[0m11:42:56,356 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = h2
+[0m[0m11:42:56,357 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = mysql
+[0m[0m11:42:56,365 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0008: Undertow HTTP listener default suspending
+[0m[0m11:42:56,366 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0007: Undertow HTTP listener default stopped, was bound to /0.0.0.0:8080
+[0m[0m11:42:56,377 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0004: Undertow 1.2.9.Final stopping
+[0m[0m11:42:56,393 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0050: WildFly Full 9.0.1.Final (WildFly Core 1.0.1.Final) stopped in 73ms
+[0m=> Restarting WildFly
+=========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /opt/jboss/wildfly
+
+  JAVA: /usr/lib/jvm/java/bin/java
+
+  JAVA_OPTS:  -server -XX:+UseCompressedOops  -server -XX:+UseCompressedOops -Xms64m -Xmx512m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true
+
+=========================================================================
+
+[0m11:42:56,895 INFO  [org.jboss.modules] (main) JBoss Modules version 1.4.3.Final
+[0m[0m11:42:57,208 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+[0m[0m11:42:57,301 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 9.0.1.Final (WildFly Core 1.0.1.Final) starting
+[0m[0m11:42:58,858 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 17) WFLYCTL0028: Attribute 'enabled' in the resource at address '/subsystem=datasources/data-source=ExampleDS' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:42:58,895 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 16) WFLYCTL0028: Attribute 'job-repository-type' in the resource at address '/subsystem=batch' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:42:58,897 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 17) WFLYCTL0028: Attribute 'enabled' in the resource at address '/subsystem=datasources/data-source=mysqlDS' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[0m[0m11:42:58,925 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) WFLYDS0015: Re-attempting failed deployment ProductService.war
+[0m[0m11:42:58,990 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 9) WFLYDR0001: Content added at location /opt/jboss/wildfly/standalone/data/content/12/dc1d80b261e5ad970bb67063f121bd62388b31/content
+[0m[0m11:42:59,005 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+[0m[0m11:42:59,035 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.3.1.Final
+[0m[0m11:42:59,069 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.3.1.Final
+[0m[0m11:42:59,157 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 38) WFLYCLINF0001: Activating Infinispan subsystem.
+[0m[0m11:42:59,178 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 37) WFLYIO001: Worker 'default' has auto-configured to 2 core threads with 16 task threads based on your 1 available processors
+[0m[0m11:42:59,182 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 4.0.9.Final
+[0m[0m11:42:59,225 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 33) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+[0m[0m11:42:59,283 INFO  [org.jboss.as.connector] (MSC service thread 1-2) WFLYJCA0009: Starting JCA Subsystem (IronJacamar 1.2.4.Final)
+[0m[0m11:42:59,266 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) WFLYNAM0001: Activating Naming Subsystem
+[0m[0m11:42:59,241 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 44) WFLYJSF0007: Activated the following JSF Implementations: [main]
+[0m[0m11:42:59,325 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 56) WFLYWS0002: Activating WebServices Extension
+[0m[33m11:42:59,369 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 54) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+[0m[0m11:42:59,329 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 53) WFLYSEC0002: Activating Security Subsystem
+[0m[0m11:42:59,416 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 33) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+[0m[0m11:42:59,449 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = h2
+[0m[0m11:42:59,452 INFO  [org.jboss.as.naming] (MSC service thread 1-1) WFLYNAM0003: Starting Naming Service
+[0m[0m11:42:59,488 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-1) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+[0m[0m11:42:59,582 INFO  [org.jboss.as.security] (MSC service thread 1-1) WFLYSEC0001: Current PicketBox version=4.9.2.Final
+[0m[0m11:42:59,601 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0003: Undertow 1.2.9.Final starting
+[0m[0m11:42:59,626 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = mysql
+[0m[0m11:42:59,585 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0003: Undertow 1.2.9.Final starting
+[0m[0m11:42:59,717 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path /opt/jboss/wildfly/welcome-content
+[0m[0m11:42:59,891 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0012: Started server default-server.
+[0m[0m11:43:00,132 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0006: Undertow HTTP listener default listening on /0.0.0.0:8080
+[0m[0m11:43:00,136 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0018: Host default-host starting
+[0m[0m11:43:00,302 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleMySQLDS]
+[0m[0m11:43:00,319 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+[0m[0m11:43:00,451 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "ProductService.war" (runtime-name: "ProductService.war")
+[0m[0m11:43:00,463 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-2) WFLYDS0013: Started FileSystemDeploymentService for directory /opt/jboss/wildfly/standalone/deployments
+[0m[0m11:43:00,503 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBoss Web Services - Stack CXF Server 5.0.0.Final
+[0m[0m11:43:01,010 INFO  [org.jboss.as.jpa] (MSC service thread 1-2) WFLYJPA0002: Read persistence.xml for ProductService-persistence-unit
+[0m[0m11:43:01,091 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 58) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'ProductService.war#ProductService-persistence-unit'
+[0m[0m11:43:01,097 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 58) HHH000204: Processing PersistenceUnitInfo [
+	name: ProductService-persistence-unit
+	...]
+[0m[0m11:43:01,170 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment ProductService.war
+[0m[0m11:43:01,236 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 58) HHH000412: Hibernate Core {4.3.10.Final}
+[0m[0m11:43:01,238 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 58) HHH000206: hibernate.properties not found
+[0m[0m11:43:01,263 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 58) HHH000021: Bytecode provider name : javassist
+[0m[0m11:43:01,310 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-1) HV000001: Hibernate Validator 5.1.3.Final
+[0m[0m11:43:01,468 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-1) JNDI bindings for session bean named ProductEndpoint in deployment unit deployment "ProductService.war" are as follows:
+
+	java:global/ProductService/ProductEndpoint!ch.trivadis.rest.ProductEndpoint
+	java:app/ProductService/ProductEndpoint!ch.trivadis.rest.ProductEndpoint
+	java:module/ProductEndpoint!ch.trivadis.rest.ProductEndpoint
+	java:global/ProductService/ProductEndpoint
+	java:app/ProductService/ProductEndpoint
+	java:module/ProductEndpoint
+
+[0m[0m11:43:01,783 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0006: Starting Services for CDI deployment: ProductService.war
+[0m[0m11:43:01,832 INFO  [org.jboss.weld.Version] (MSC service thread 1-2) WELD-000900: 2.2.14 (Final)
+[0m[0m11:43:01,896 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0009: Starting weld service for deployment ProductService.war
+[0m[0m11:43:02,243 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 58) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'ProductService.war#ProductService-persistence-unit'
+[0m[0m11:43:02,350 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 58) HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+[0m[33m11:43:02,443 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 58) IJ000604: Throwable while attempting to get a new connection: null: javax.resource.ResourceException: IJ031084: Unable to create connection
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createLocalManagedConnection(LocalManagedConnectionFactory.java:336)
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.getLocalManagedConnection(LocalManagedConnectionFactory.java:343)
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createManagedConnection(LocalManagedConnectionFactory.java:278)
+	at org.jboss.jca.core.connectionmanager.pool.mcp.SemaphoreArrayListManagedConnectionPool.createConnectionEventListener(SemaphoreArrayListManagedConnectionPool.java:1224)
+	at org.jboss.jca.core.connectionmanager.pool.mcp.SemaphoreArrayListManagedConnectionPool.getConnection(SemaphoreArrayListManagedConnectionPool.java:484)
+	at org.jboss.jca.core.connectionmanager.pool.AbstractPool.getSimpleConnection(AbstractPool.java:622)
+	at org.jboss.jca.core.connectionmanager.pool.AbstractPool.getConnection(AbstractPool.java:594)
+	at org.jboss.jca.core.connectionmanager.AbstractConnectionManager.getManagedConnection(AbstractConnectionManager.java:579)
+	at org.jboss.jca.core.connectionmanager.tx.TxConnectionManagerImpl.getManagedConnection(TxConnectionManagerImpl.java:430)
+	at org.jboss.jca.core.connectionmanager.AbstractConnectionManager.allocateConnection(AbstractConnectionManager.java:737)
+	at org.jboss.jca.adapters.jdbc.WrapperDataSource.getConnection(WrapperDataSource.java:138)
+	at org.jboss.as.connector.subsystems.datasources.WildFlyDataSource.getConnection(WildFlyDataSource.java:67)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcServicesImpl.java:279)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:124)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:111)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:234)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1887)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1845)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849)
+	at org.jboss.as.jpa.hibernate4.TwoPhaseBootstrapImpl.build(TwoPhaseBootstrapImpl.java:44)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:154)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:117)
+	at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:665)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1.run(PersistenceUnitServiceImpl.java:182)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:320)
+Caused by: java.sql.SQLException: Must specify port after ':' in connection string
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1094)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:997)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:983)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:928)
+	at com.mysql.jdbc.NonRegisteringDriver.parseHostPortPair(NonRegisteringDriver.java:229)
+	at com.mysql.jdbc.NonRegisteringDriver.parseURL(NonRegisteringDriver.java:754)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:335)
+	at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createLocalManagedConnection(LocalManagedConnectionFactory.java:312)
+	... 32 more
+
+[0m[33m11:43:02,446 WARN  [org.hibernate.engine.jdbc.internal.JdbcServicesImpl] (ServerService Thread Pool -- 58) HHH000342: Could not obtain connection to query metadata : javax.resource.ResourceException: IJ000453: Unable to get managed connection for java:jboss/datasources/ExampleMySQLDS
+[0m[31m11:43:02,450 ERROR [org.jboss.msc.service.fail] (ServerService Thread Pool -- 58) MSC000001: Failed to start service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.jboss.msc.service.StartException in service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:172)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:117)
+	at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:665)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1.run(PersistenceUnitServiceImpl.java:182)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:320)
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:104)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:71)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:205)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:111)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:234)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1887)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1845)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849)
+	at org.jboss.as.jpa.hibernate4.TwoPhaseBootstrapImpl.build(TwoPhaseBootstrapImpl.java:44)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:154)
+	... 7 more
+
+[0m[31m11:43:02,459 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "ProductService.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.persistenceunit.\"ProductService.war#ProductService-persistence-unit\"" => "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"ProductService.war#ProductService-persistence-unit\": org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+    Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set"}}
+[0m[0m11:43:02,526 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 34) WFLYSRV0010: Deployed "ProductService.war" (runtime-name : "ProductService.war")
+[0m[0m11:43:02,527 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.jboss.msc.service.StartException in service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit": org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+
+[0m[0m11:43:02,688 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+[0m[0m11:43:02,689 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+[0m[31m11:43:02,689 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: WildFly Full 9.0.1.Final (WildFly Core 1.0.1.Final) started (with errors) in 6139ms - Started 305 of 502 services (24 services failed or missing dependencies, 221 services are lazy, passive or on-demand)
+[0m[0m11:43:02,721 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 9) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'ProductService.war#ProductService-persistence-unit'
+[0m[0m11:43:02,722 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0010: Stopping weld service for deployment ProductService.war
+[0m[0m11:43:02,779 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment ProductService.war (runtime-name: ProductService.war) in 62ms
+[0m[0m11:43:02,834 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 1) WFLYDR0002: Content removed from location /opt/jboss/wildfly/standalone/data/content/12/dc1d80b261e5ad970bb67063f121bd62388b31/content
+[0m[0m11:43:02,835 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) WFLYSRV0009: Undeployed "ProductService.war" (runtime-name: "ProductService.war")
+[0m[0m11:43:02,841 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 1) WFLYCTL0183: Service status report
+WFLYCTL0184:    New missing/unsatisfied dependencies:
+      service jboss.deployment.unit."ProductService.war".WeldBootstrapService (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".WeldInstantiator, WFLYCTL0208: ... and 7 more ] 
+      service jboss.deployment.unit."ProductService.war".WeldStartService (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".WeldInstantiator, service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".WeldInstantiator, WFLYCTL0208: ... and 8 more ] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START (missing) dependents: [service jboss.deployment.unit."ProductService.war".moduleDeploymentRuntimeInformationStart, service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.VIEW."ch.trivadis.rest.ProductEndpoint".LOCAL (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInterceptorBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.WeldInstantiator] 
+      service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.ejb.non-functional-timerservice (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."com.sun.faces.config.ConfigureListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.faces.webapp.FacetTag".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".CREATE (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".START] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".JndiBindingsService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".START (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService, service jboss.undertow.deployment.default-server.default-host./ProductService, service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".WeldInstantiator (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldTerminalListener".START] 
+      service jboss.deployment.unit."ProductService.war".ee.ComponentRegistry (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService] 
+      service jboss.deployment.unit."ProductService.war".jndiDependencyService (missing) dependents: [service jboss.deployment.unit."ProductService.war".component."org.jboss.weld.servlet.WeldInitialListener".START, service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START, service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START, service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START, WFLYCTL0208: ... and 5 more ] 
+      service jboss.deployment.unit."ProductService.war".moduleDeploymentRuntimeInformation (missing) dependents: [service jboss.deployment.unit."ProductService.war".moduleDeploymentRuntimeInformationStart, service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START] 
+      service jboss.naming.context.java.app.ProductService.env (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.BeanManager (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultContextService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultDataSource (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultManagedExecutorService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultManagedScheduledExecutorService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.DefaultManagedThreadFactory (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.EJBContext (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.TimerService (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.TransactionSynchronizationRegistry (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.UserTransaction (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.env (missing) dependents: [service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.naming.context.java.module.ProductService.ProductService.env."ch.trivadis.rest.ProductEndpoint".em (missing) dependents: [service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START, service jboss.deployment.unit."ProductService.war".jndiDependencyService] 
+      service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit" (missing) dependents: [service jboss.naming.context.java.module.ProductService.ProductService.env."ch.trivadis.rest.ProductEndpoint".em, service jboss.deployment.unit."ProductService.war".component.ProductEndpoint.START, service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START, service jboss.deployment.unit."ProductService.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START, WFLYCTL0208: ... and 7 more ] 
+      service jboss.server.global-request-controller.control-point."ProductService.war".undertow (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService] 
+      service jboss.undertow.deployment.default-server.default-host./ProductService (missing) dependents: [service jboss.deployment.unit."ProductService.war".deploymentCompleteService] 
+      service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService] 
+      service jboss.undertow.deployment.default-server.default-host./ProductService.codec (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService] 
+      service jboss.undertow.deployment.default-server.default-host./ProductService.session (missing) dependents: [service jboss.undertow.deployment.default-server.default-host./ProductService.UndertowDeploymentInfoService] 
+WFLYCTL0186:   Services which failed to start:      service jboss.persistenceunit."ProductService.war#ProductService-persistence-unit"
+
