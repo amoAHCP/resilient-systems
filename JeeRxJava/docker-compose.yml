@@ -5,9 +5,23 @@ mysqldb:
     MYSQL_USER: mysql
     MYSQL_PASSWORD: mysql
     MYSQL_ROOT_PASSWORD: supersecret
-mywildfly:
+warehouseservice:
+  image: warehouseservice
+  links:
+    - mysqldb:db
+  ports:
+    - 9090:8080
+amazonservice:
+  image: amazonservice
+  links:
+    - mysqldb:db
+  ports:
+    - 7070:8080
+productservice:
   image: productservice
   links:
     - mysqldb:db
+    - warehouseservice:warehouseservice
+    - amazonservice:amazonservice
   ports:
     - 8080:8080

@@ -1,0 +1,85 @@
+<div class="form-horizontal">
+    <h3>Create a new Product</h3>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-sm-2">
+            <a id="Create" name="Create" class="btn btn-primary" href="#/Products/new"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
+        </div>
+    </div>
+</div>
+<hr/>
+<div>
+    <h3>Search for Products</h3>
+    <form id="ProductSearch" class="form-horizontal">
+        
+
+    <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+            <input id="name" name="name" class="form-control" type="text" ng-model="search.name" placeholder="Enter the Product Name"></input>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="description" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-10">
+            <input id="description" name="description" class="form-control" type="text" ng-model="search.description" placeholder="Enter the Product Description"></input>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="price" class="col-sm-2 control-label">Price</label>
+        <div class="col-sm-10">
+            <input id="price" name="price" class="form-control" type="text" ng-model="search.price" placeholder="Enter the Product Price"></input>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="displayPrice" class="col-sm-2 control-label">Display Price</label>
+        <div class="col-sm-10">
+            <input id="displayPrice" name="displayPrice" class="form-control" type="text" ng-model="search.displayPrice" placeholder="Enter the Product Display Price"></input>
+        </div>
+    </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-sm-10">
+                <a id="Search" name="Search" class="btn btn-primary" ng-click="performSearch()"><span class="glyphicon glyphicon-search"></span> Search</a>
+            </div>
+        </div>
+    </form>
+</div>
+<div id="search-results">
+        <div class="table-responsive">
+        <table class="table table-responsive table-bordered table-striped clearfix">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Display Price</th>
+                </tr>
+            </thead>
+            <tbody id="search-results-body">
+                <tr ng-repeat="result in filteredResults | startFrom:currentPage*pageSize | limitTo:pageSize">
+                    <td><a href="#/Products/edit/{{result.id}}">{{result.name}}</a></td>
+                    <td><a href="#/Products/edit/{{result.id}}">{{result.description}}</a></td>
+                    <td><a href="#/Products/edit/{{result.id}}">{{result.price}}</a></td>
+                    <td><a href="#/Products/edit/{{result.id}}">{{result.displayPrice}}</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+        <ul class="pagination pagination-centered">
+        <li ng-class="{disabled:currentPage == 0}">
+            <a id="prev" href ng-click="previous()">«</a>
+        </li>
+        <li ng-repeat="n in pageRange" ng-class="{active:currentPage == n}" ng-click="setPage(n)">
+            <a href ng-bind="n + 1">1</a>
+        </li>
+        <li ng-class="{disabled: currentPage == (numberOfPages() - 1)}">
+            <a id="next" href ng-click="next()">»</a>
+        </li>
+    </ul>
+
+</div>

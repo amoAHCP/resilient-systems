@@ -3,8 +3,11 @@ package ch.trivadis.service;
 import ch.trivadis.model.Product;
 
 import javax.ejb.Stateless;
-import javax.persistence.*;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
@@ -14,75 +17,60 @@ import java.util.List;
 @Stateless
 public class ProductService {
 
-    @PersistenceContext(unitName = "ProductService-persistence-unit")
-    private EntityManager em;
+    private Client client = ClientBuilder.newClient();
 
-    public void create(Product entity) {
-        em.persist(entity);
+    private String warehouse = System.getenv("JEERXJAVA_WAREHOUSESERVICE_1_PORT_8080_TCP_ADDR");
+    private String warehousePort = System.getenv("JEERXJAVA_WAREHOUSESERVICE_1_PORT_8080_TCP_PORT");
+    private String amazon = System.getenv("JEERXJAVA_AMAZONSERVICE_1_PORT_8080_TCP_ADDR");
+    private String amazonPort = System.getenv("JEERXJAVA_AMAZONSERVICE_1_PORT_8080_TCP_PORT");
+    private String wareHouseBaseURL="http://" + warehouse + ":8080" + "/WarehouseService/rest/products";
+
+
+    public Response create(Product entity) {
+        client.
+                target(wareHouseBaseURL +"/").
+                request("application/json").post(Entity.entity(entity, "application/json"));
+        return Response.ok().build();
     }
 
-    public Response.Status deleteById(@PathParam("id") Long id) {
-        Product entity = em.find(Product.class, id);
-        if (entity == null) {
-            return Response.Status.NOT_FOUND;
-        }
-        em.remove(entity);
-        return Response.Status.OK;
+    public Response deleteById(@PathParam("id") Long id) {
+        return client.
+                target(wareHouseBaseURL+ "/" + id).
+                request("application/json").delete();
     }
 
-    public Product findById(@PathParam("id") Long id) {
-        TypedQuery<Product> findByIdQuery = em
-                .createQuery(
-                        "SELECT DISTINCT p FROM Product p WHERE p.id = :entityId ORDER BY p.id",
-                        Product.class);
-        findByIdQuery.setParameter("entityId", id);
-        Product entity;
-        try {
-            entity = findByIdQuery.getSingleResult();
-        } catch (NoResultException nre) {
-            entity = null;
+    public Response findById(Long id) {
+        final Product p = client.
+                target(wareHouseBaseURL+ "/" + id).
+                request("application/json").
+                get(Product.class);
+        if (p != null) {
+            return Response.ok(p).build();
         }
-        if (entity == null) {
-            return null;
-        }
-        return entity;
+        return Response.status(Response.Status.NOT_FOUND).build();
     }
 
     public List<Product> listAll(Integer startPosition,
                                  Integer maxResult) {
-        TypedQuery<Product> findAllQuery = em
-                .createQuery("SELECT DISTINCT p FROM Product p ORDER BY p.id",
-                        Product.class);
-        if (startPosition != null) {
-            findAllQuery.setFirstResult(startPosition);
+        String postfix = "";
+        if (startPosition != null && maxResult != null) {
+            postfix = "?start=" + startPosition + "&max=" + maxResult;
+        } else if (startPosition != null) {
+            postfix = "?start=" + startPosition;
+        } else if (maxResult != null) {
+            postfix = "?max=" + maxResult;
         }
-        if (maxResult != null) {
-            findAllQuery.setMaxResults(maxResult);
-        }
-        final List<Product> results = findAllQuery.getResultList();
-        return results;
+        System.out.println(wareHouseBaseURL + postfix);
+        return client.
+                target(wareHouseBaseURL + postfix).
+                request("application/json").get(new GenericType<List<Product>>() {
+        });
     }
 
-    public Response.Status update(@PathParam("id") Long id, Product entity) {
-        if (entity == null) {
-            return Response.Status.BAD_REQUEST;
-        }
-        if (id == null) {
-            return Response.Status.BAD_REQUEST;
-        }
-        if (!id.equals(entity.getId())) {
-            return Response.Status.CONFLICT;
-        }
-        if (em.find(Product.class, id) == null) {
-            return Response.Status.NOT_FOUND;
-        }
-        try {
-            entity = em.merge(entity);
-        } catch (OptimisticLockException e) {
-            return Response.Status.CONFLICT;
-        }
-
-        return Response.Status.OK;
+    public Response update(@PathParam("id") Long id, Product entity) {
+        return client.
+                target(wareHouseBaseURL+ "/" + id).
+                request("application/json").put(javax.ws.rs.client.Entity.entity(entity, "application/json"));
     }
 }
 

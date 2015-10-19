@@ -1,0 +1,46 @@
+<header ng-switch on="$location.path().indexOf('/Products/new') > -1">
+    <h3 ng-switch-when="true">Create a new Product</h3>
+    <h3 ng-switch-when="false">View or edit Product</h3>
+</header>
+<form id="ProductForm" name="ProductForm" class="form-horizontal" role="form">
+    
+
+    <div class="form-group" ng-class="{'has-error': ProductForm.name.$invalid}">
+        <label for="name" class="col-sm-2 control-label">Name</label>
+        <div id="nameControls" class="col-sm-10">
+            <input id="name" name="name" type="text" class="form-control" ng-model="product.name" placeholder="Enter the Product Name"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': ProductForm.description.$invalid}">
+        <label for="description" class="col-sm-2 control-label">Description</label>
+        <div id="descriptionControls" class="col-sm-10">
+            <input id="description" name="description" type="text" class="form-control" ng-model="product.description" placeholder="Enter the Product Description"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': ProductForm.price.$invalid}">
+        <label for="price" class="col-sm-2 control-label">Price</label>
+        <div id="priceControls" class="col-sm-10">
+            <input id="price" name="price" type="number" class="form-control" ng-model="product.price" placeholder="Enter the Product Price"></input>
+            <span class="help-block error" ng-show="ProductForm.price.$error.number">not a number</span>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': ProductForm.displayPrice.$invalid}">
+        <label for="displayPrice" class="col-sm-2 control-label">Display Price</label>
+        <div id="displayPriceControls" class="col-sm-10">
+            <input id="displayPrice" name="displayPrice" type="number" class="form-control" ng-model="product.displayPrice" placeholder="Enter the Product Display Price"></input>
+            <span class="help-block error" ng-show="ProductForm.displayPrice.$error.number">not a number</span>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button id="saveProduct" name="saveProduct" class="btn btn-primary" ng-disabled="isClean() || ProductForm.$invalid" ng-click="save()"><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+            <button id="cancel" name="cancel" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove-sign"></span> Cancel</button>
+            <button id="deleteProduct" name="deleteProduct" class="btn btn-danger" ng-show="product.id" ng-click="remove()"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+        </div>
+    </div>
+</form>
