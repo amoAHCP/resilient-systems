@@ -60,7 +60,6 @@ public class ProductService {
         } else if (maxResult != null) {
             postfix = "?max=" + maxResult;
         }
-        System.out.println(wareHouseBaseURL + postfix);
         return client.
                 target(wareHouseBaseURL + postfix).
                 request("application/json").get(new GenericType<List<Product>>() {
