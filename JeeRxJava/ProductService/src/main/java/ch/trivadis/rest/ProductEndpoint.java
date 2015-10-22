@@ -6,8 +6,9 @@ import ch.trivadis.service.ProductService;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.container.AsyncResponse;
+import javax.ws.rs.container.Suspended;
 import javax.ws.rs.core.Response;
-import java.util.List;
 
 /**
  *
@@ -22,37 +23,52 @@ public class ProductEndpoint {
 
     @POST
     @Consumes("application/json")
-    // public Response create(Product entity,@Suspended final AsyncResponse asyncResponse) {
-    public Response create(Product entity) {
-        return productService.create(entity).single().toBlocking().single();
+    public void create(Product entity, @Suspended final AsyncResponse asyncResponse) {
+        productService.create(entity).
+                subscribe(createResponse -> asyncResponse.resume(createResponse), error ->
+                                asyncResponse.resume(Response.status(Response.Status.BAD_REQUEST).entity(error.getCause()).build())
+                );
     }
 
     @DELETE
     @Path("/{id:[0-9][0-9]*}")
-    public Response deleteById(@PathParam("id") Long id) {
-        return productService.deleteById(id).single().toBlocking().single();
+    public void deleteById(@PathParam("id") Long id, @Suspended final AsyncResponse asyncResponse) {
+        productService.deleteById(id).
+                subscribe(deleteResponse -> asyncResponse.resume(deleteResponse), error ->
+                                asyncResponse.resume(Response.status(Response.Status.NOT_MODIFIED).entity(error.getCause()).build())
+                );
     }
 
     @GET
     @Path("/{id:[0-9][0-9]*}")
     @Produces("application/json")
-    public Response findById(@PathParam("id") Long id) {
-        return productService.findById(id).single().toBlocking().single();
+    public void findById(@PathParam("id") Long id, @Suspended final AsyncResponse asyncResponse) {
+        productService.
+                findById(id).
+                subscribe(productResponse -> asyncResponse.resume(productResponse), error ->
+                                asyncResponse.resume(Response.status(Response.Status.NOT_FOUND).entity(error.getCause()).build())
+                );
 
     }
 
     @GET
     @Produces("application/json")
-    public List<Product> listAll(@QueryParam("start") Integer startPosition,
-                                 @QueryParam("max") Integer maxResult) {
-       return productService.listAll(startPosition,maxResult).single().toBlocking().single();
+    public void listAll(@QueryParam("start") Integer startPosition,
+                        @QueryParam("max") Integer maxResult, @Suspended final AsyncResponse asyncResponse) {
+        productService.listAll(startPosition, maxResult).
+                subscribe(productResponse -> asyncResponse.resume(productResponse), error ->
+                                asyncResponse.resume(Response.status(Response.Status.NOT_FOUND).entity(error.getCause()).build())
+                );
 
     }
 
     @PUT
     @Path("/{id:[0-9][0-9]*}")
     @Consumes("application/json")
-    public Response update(@PathParam("id") Long id, Product entity) {
-        return productService.update(id,entity).single().toBlocking().single();
+    public void update(@PathParam("id") Long id, Product entity, @Suspended final AsyncResponse asyncResponse) {
+        productService.update(id, entity).
+                subscribe(updateResponse -> asyncResponse.resume(updateResponse), error ->
+                                asyncResponse.resume(Response.status(Response.Status.NOT_MODIFIED).entity(error.getCause()).build())
+                );
     }
 }

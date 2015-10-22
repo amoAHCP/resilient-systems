@@ -7,6 +7,8 @@ import rx.Subscriber;
 
 import javax.ejb.Stateless;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.ProcessingException;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -23,20 +25,21 @@ public class ProductService {
 
     private Client client = ClientBuilder.newClient();
 
-    private String warehouse = System.getenv("JEERXJAVA_WAREHOUSESERVICE_1_PORT_8080_TCP_ADDR");
+    private String warehouse = "warehouseservice";
     private String warehousePort = System.getenv("JEERXJAVA_WAREHOUSESERVICE_1_PORT_8080_TCP_PORT");
-    private String amazon = System.getenv("JEERXJAVA_AMAZONSERVICE_1_PORT_8080_TCP_ADDR");
+    private String amazon = "amazonservice";
     private String amazonPort = System.getenv("JEERXJAVA_AMAZONSERVICE_1_PORT_8080_TCP_PORT");
     private String wareHouseBaseURL = "http://" + warehouse + ":8080" + "/WarehouseService/rest/products";
+    private String amazonBaseURL = "http://" + amazon + ":8080" + "/AmazonService/rest/products";
 
 
     public Observable<Response> create(Product entity) {
         return Observable.<Response>create(sub ->
                 onBadRequestCatch(() -> {
-                    Response value =  client.
+                    Response value = client.
                             target(wareHouseBaseURL + "/").
                             request(MediaType.APPLICATION_JSON_TYPE).post(Entity.entity(entity, MediaType.APPLICATION_JSON_TYPE));
-                    response(value,sub);
+                    response(value, sub);
                 }, sub));
     }
 
@@ -46,38 +49,76 @@ public class ProductService {
                     Response value = client.
                             target(wareHouseBaseURL + "/" + id).
                             request(MediaType.APPLICATION_JSON_TYPE).delete();
-                    response(value,sub);
+                    response(value, sub);
                 }, sub));
     }
 
     public Observable<Response> findById(Long id) {
-        return Observable.<Response>create(sub ->
-                onBadRequestCatch(() -> {
-                    Product p = client.
-                            target(wareHouseBaseURL + "/" + id).
-                            request(MediaType.APPLICATION_JSON_TYPE).
-                            get(Product.class);
-                    response(p!=null?Response.ok(p).build():null,sub);
-                }, sub));
+
+        return findInWarehouseById(id).
+                doOnError(e -> System.out.println("FALLING BACK TO AMAZON SERVICE")).
+                onErrorResumeNext(next -> findOnAmazonById(id)).
+                map(product -> Response.ok(product).build());
+
+    }
+
+    private Observable<Product> findInWarehouseById(Long id) {
+        return Observable.<Product>create(sub ->
+                handleClientExceptions(() ->
+                        response(getProductById(wareHouseBaseURL,id), sub), sub, "findOnAmazonById"));
+
+    }
+
+    private Observable<Product> findOnAmazonById(Long id) {
+        return Observable.<Product>create(sub ->
+                handleClientExceptions(() ->
+                        response(getProductById(amazonBaseURL,id), sub), sub, "findOnAmazonById"));
+
+    }
+
+    private Product getProductById(String baseURL,Long id) {
+        return client.
+                target(baseURL + "/" + id).
+                request(MediaType.APPLICATION_JSON_TYPE).
+                get(Product.class);
     }
 
 
     public Observable<List<Product>> listAll(Integer startPosition,
                                              Integer maxResult) {
-        final String postfix = getServicePostfix(startPosition, maxResult);
-        return Observable.<List<Product>>create(sub ->
-                onBadRequestCatch(() -> {
-                    final List<Product> value = client.
-                            target(wareHouseBaseURL + postfix).
-                            request(MediaType.APPLICATION_JSON_TYPE).get(new GenericType<List<Product>>() {
-                    });
+        return findInWarehouseListAll(startPosition, maxResult).
+                doOnError(e -> System.out.println("FALLING BACK TO AMAZON SERVICE")).
+                onErrorResumeNext(next -> findOnAmazonListAll(startPosition, maxResult));
+    }
 
-                    response(value,sub);
-                }, sub));
+    private Observable<List<Product>> findInWarehouseListAll(Integer startPosition,
+                                                             Integer maxResult) {
+        return Observable.<List<Product>>create(sub ->
+                handleClientExceptions(() -> {
+                    final String postfix = getServicePostfix(startPosition, maxResult);
+                    final List<Product> value = getAllProducts(wareHouseBaseURL,postfix);
+                    response(value, sub);
+                }, sub, "findInWarehouseListAll"));
     }
 
 
+    private Observable<List<Product>> findOnAmazonListAll(Integer startPosition,
+                                                          Integer maxResult) {
+        return Observable.<List<Product>>create(sub ->
+                handleClientExceptions(() -> {
+                    final String postfix = getServicePostfix(startPosition, maxResult);
+                    final List<Product> value = getAllProducts(amazonBaseURL,postfix);
+                    response(value, sub);
+                }, sub, "findOnAmazonListAll"));
 
+    }
+
+    private List<Product> getAllProducts(String baseUrl, String postfix) {
+        return client.
+                target(baseUrl + postfix).
+                request(MediaType.APPLICATION_JSON_TYPE).get(new GenericType<List<Product>>() {
+        });
+    }
 
     public Observable<Response> update(@PathParam("id") Long id, Product entity) {
         return Observable.<Response>create(sub ->
@@ -85,16 +126,26 @@ public class ProductService {
                     Response value = client.
                             target(wareHouseBaseURL + "/" + id).
                             request(MediaType.APPLICATION_JSON_TYPE).put(Entity.entity(entity, MediaType.APPLICATION_JSON_TYPE));
-                    response(value,sub);
+                    response(value, sub);
                 }, sub));
     }
 
-    private <T> void response(T value,Subscriber<T> sub) {
+    private <T> void response(T value, Subscriber<T> sub) {
         if (value != null) {
             sub.onNext(value);
             sub.onCompleted();
         } else {
             sub.onError(new ProductServiceException(Response.Status.NOT_FOUND, "", null));
+        }
+    }
+
+    private void handleClientExceptions(Runnable r, Subscriber<?> sub, final String name) {
+        try {
+            r.run();
+        } catch (WebApplicationException e) {
+            sub.onError(new ProductServiceException(Response.Status.NOT_FOUND, "--> WebApplicationException -- " + name, null));
+        } catch (ProcessingException e) {
+            sub.onError(new ProductServiceException(Response.Status.NOT_FOUND, "--> ProcessingException  -- " + name, null));
         }
     }
 
