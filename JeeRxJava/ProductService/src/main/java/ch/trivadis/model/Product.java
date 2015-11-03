@@ -1,30 +1,13 @@
 package ch.trivadis.model;
 
-import javax.persistence.*;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
-@Entity
-@XmlRootElement
 public class Product implements Serializable {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
-	@Version
-	@Column(name = "version")
 	private int version;
-
-	@Column
 	private String name;
-
-	@Column
 	private String description;
-
-	@Column
 	private Double price;
-
-	@Transient
 	private Double displayPrice;
 
 	public Long getId() {

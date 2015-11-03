@@ -24,18 +24,24 @@ public class ProductEndpoint {
     @POST
     @Consumes("application/json")
     public void create(Product entity, @Suspended final AsyncResponse asyncResponse) {
-        productService.create(entity).
-                subscribe(createResponse -> asyncResponse.resume(createResponse), error ->
-                                asyncResponse.resume(Response.status(Response.Status.BAD_REQUEST).entity(error.getCause()).build())
+        productService.
+                create(entity).
+                subscribe(
+                        createResponse -> asyncResponse.resume(createResponse),
+                        error -> onErrorResponse(asyncResponse, error)
                 );
     }
+
+
 
     @DELETE
     @Path("/{id:[0-9][0-9]*}")
     public void deleteById(@PathParam("id") Long id, @Suspended final AsyncResponse asyncResponse) {
-        productService.deleteById(id).
-                subscribe(deleteResponse -> asyncResponse.resume(deleteResponse), error ->
-                                asyncResponse.resume(Response.status(Response.Status.NOT_MODIFIED).entity(error.getCause()).build())
+        productService.
+                deleteById(id).
+                subscribe(
+                        deleteResponse -> asyncResponse.resume(deleteResponse),
+                        error -> onErrorResponse(asyncResponse, error)
                 );
     }
 
@@ -45,8 +51,9 @@ public class ProductEndpoint {
     public void findById(@PathParam("id") Long id, @Suspended final AsyncResponse asyncResponse) {
         productService.
                 findById(id).
-                subscribe(productResponse -> asyncResponse.resume(productResponse), error ->
-                                asyncResponse.resume(Response.status(Response.Status.NOT_FOUND).entity(error.getCause()).build())
+                subscribe(
+                        productResponse -> asyncResponse.resume(productResponse),
+                        error -> onErrorResponse(asyncResponse, error)
                 );
 
     }
@@ -55,9 +62,11 @@ public class ProductEndpoint {
     @Produces("application/json")
     public void listAll(@QueryParam("start") Integer startPosition,
                         @QueryParam("max") Integer maxResult, @Suspended final AsyncResponse asyncResponse) {
-        productService.listAll(startPosition, maxResult).
-                subscribe(productResponse -> asyncResponse.resume(productResponse), error ->
-                                asyncResponse.resume(Response.status(Response.Status.NOT_FOUND).entity(error.getCause()).build())
+        productService.
+                listAll(startPosition, maxResult).
+                subscribe(
+                        productResponse -> asyncResponse.resume(productResponse),
+                        error -> onErrorResponse(asyncResponse, error)
                 );
 
     }
@@ -66,9 +75,15 @@ public class ProductEndpoint {
     @Path("/{id:[0-9][0-9]*}")
     @Consumes("application/json")
     public void update(@PathParam("id") Long id, Product entity, @Suspended final AsyncResponse asyncResponse) {
-        productService.update(id, entity).
-                subscribe(updateResponse -> asyncResponse.resume(updateResponse), error ->
-                                asyncResponse.resume(Response.status(Response.Status.NOT_MODIFIED).entity(error.getCause()).build())
+        productService.
+                update(id, entity).
+                subscribe(
+                        updateResponse -> asyncResponse.resume(updateResponse),
+                        error -> asyncResponse.resume(Response.status(Response.Status.NOT_MODIFIED).entity(error.getCause()).build())
                 );
+    }
+
+    private boolean onErrorResponse(AsyncResponse asyncResponse, Throwable error) {
+        return asyncResponse.resume(Response.status(Response.Status.BAD_REQUEST).entity(error.getCause()).build());
     }
 }

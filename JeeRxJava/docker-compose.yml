@@ -1,5 +1,7 @@
 mysqldb:
   image: mysql:latest
+  ports:
+    - 3306:3306
   environment:
     MYSQL_DATABASE: sample
     MYSQL_USER: mysql
@@ -25,3 +27,5 @@ productservice:
     - amazonservice:amazonservice
   ports:
     - 8080:8080
+    - 8787:8787
+    - 9990:9990
